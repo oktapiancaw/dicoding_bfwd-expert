@@ -11,19 +11,27 @@
 <body>
   <header class="app-bar">
     <div class="app-bar__menu">
-      <button id="hamburgerButton">☰</button>
+      <button id="hamburgerButton">
+      <img src="/svg/DashboardIcon.svg" alt="">
+      </button>
     </div>
     <div class="app-bar__brand">
-      <h1>Movie Catalogue</h1>
+      <h1>Stomafin</h1>
     </div>
     <nav id="navigationDrawer" class="app-bar__navigation">
+      <h1>Stomafin</h1>
       <ul>
-        <li><a href="#/now-playing">Now Playing</a></li>
-        <li><a href="#/upcoming">Upcoming</a></li>
+        <li>
+          <a href="#/home"><img src="/svg/HomeIcon.svg" alt="">Home</a>
+        </li>
+        <li><a class="nav-link" href="#/favorite">My Favorite</a></li>
+        <li><a class="nav-link" href="#/list">List</a></li>
+        <li><a class="nav-link" href="#/about">About</a></li>
       </ul>
     </nav>
   </header>
-  <main id="mainContent"></main>
+  <main id="mainContent">
+  </main>
   <footer>
     <p>All data obtained from <a href="https://themoviedb.org" target="_blank" rel="noreferrer">TheMovieDB</a></p>
   </footer>
