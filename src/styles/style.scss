@@ -1,16 +1,64 @@
 $primary-color: #333;
 @font-face {
-  font-family: 'primaryFont';
+  font-family: 'regl-Font';
   src: url('/fonts/Poppins-Regular.ttf');
 }
+@font-face {
+  font-family: 'bold-Font';
+  src: url('/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+  font-family: 'semi-Font';
+  src: url('/fonts/Poppins-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'medi-Font';
+  src: url('/fonts/Poppins-Medium.ttf');
+}
+@font-face {
+  font-family: 'ligh-Font';
+  src: url('/fonts/Poppins-Light.ttf');
+}
+@font-face {
+  font-family: 'thin-Font';
+  src: url('/fonts/Poppins-Thin.ttf');
+}
 
+
+h1{
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: 'bold-Font';
+}
+
+h2{
+  font-size: 22px;
+  font-family: 'semi-Font';
+  letter-spacing: 1px;
+}
+
+h3{
+  font-family: 'medi-Font';
+  font-size: 20px;
+}
+h4{
+  font-family: 'medi-Font';
+  font-size: 18px;
+}
+h5{
+  font-family: 'medi-Font';
+  font-size: 16px;
+}
+a, p, span, li, tr{
+  font-family: 'regl-Font';
+  font-size: 12px;
+}
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: #FFF;
   min-height: 100vh;
   display: flex;
@@ -23,7 +71,7 @@ body {
 */
  
 .app-bar {
-  padding: 8px 16px;
+  padding: 16px;
   display: grid;
   background-color: #333;
   grid-template-columns: auto 1fr auto;
@@ -47,10 +95,9 @@ body {
   .app-bar__brand {
     display: flex;
     align-items: center;
-    justify-content: end;
-    h1 {
+    justify-content: flex-end;
+    h3 {
       color: #FFF;
-      font-size: 22px;
       margin-bottom: 0;
       user-select: none;
     }
@@ -62,18 +109,18 @@ body {
     width: calc(100% - 140px);
     height: 100vh;
     transition: all 0.3s;
-    padding: 8px 30px;
+    padding: 8px 20px;
     background-color: white;
     overflow: hidden;
     h1{
       height: 44px;
       display: flex;
       align-items: center;
-      font-size: 22px;
-      margin-bottom: 10px;
+      margin: 10px;
     }
     ul li{
       list-style: none;
+      padding: 0 10px;
       a {
         display: flex;
         align-items: center;
@@ -84,10 +131,10 @@ body {
         margin-bottom: 10px;
         width: 100%;
         font-size: 20px;
-        font-family: 'primaryFont';
+        font-family: 'ligh-Font';
         img{
-          width: 32px;
-          height: 32px;
+          width: 24px;
+          height: 24px;
           margin-right: 10px;
         }
       }
@@ -129,15 +176,132 @@ main {
     }
   }
 }
- 
+
 .content {
+  position: relative;
   margin: 0 auto;
   min-height: 100%;
+  background-color: #aaaaaa;
+  padding: 15px 20px;
   .content__heading {
     font-weight: normal;
-  } 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .card-box{
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    flex-wrap: wrap;
+    .card{
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+  .horiz-slide{
+    position: relative;
+    left: 0;
+    overflow-x: scroll;
+    .slider{
+      display: inline-flex;
+      padding-right: 40px;
+    }
+  }
+  .card{
+    position: relative;
+    width: 240px;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 10px 0 0;
+    .name-card{
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.5);
+      top: 20px;
+      left: 0;
+      padding: 5px 20px;
+      border-radius: 0 5px 5px 0;
+      letter-spacing: 1px;
+    }
+    .img-card{
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      background: #333;
+      border-radius: 5px;
+      
+    }
+    .detail-card{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding-top: 16px;
+      div:nth-child(2){
+        justify-content: center;
+      }
+      div{
+        display: flex;
+        align-items: center;
+        .btn-card{
+          box-sizing: border-box;
+          padding: 12px 20px;
+          border-radius: 5px;
+          background-color: #333;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      
+    }
+    .skeleton{
+      *{
+        overflow: hidden;
+      }
+      *:before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: -150px;
+        top: 0;
+        height: 100%;
+        width: 150px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.1) 60%, transparent);
+        animation: load 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+      }
+      .img-card{
+        position: relative;
+      }
+      .detail-card div{
+        position: relative;
+        display: block;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+        &:nth-child(1){
+          margin-right: 10px;
+          background-color: #aaa;
+        }
+        &:nth-child(2){
+          margin-left: 10px;
+          background-color: #333;
+        }
+      }
+    }
+  }
+  &.withoutpad{
+    padding: 15px 0;
+    &>div, h5{
+      padding-left: 20px;
+    }
+  }
 }
- 
+
  
 /*
   Movies
@@ -150,7 +314,14 @@ main {
   margin: 32px 0;
 }
  
- 
+@keyframes load {
+  from {
+      left: -150px;
+  }
+  to   {
+      left: 100%;
+  }
+}
 /*
   Movie Item
 */
@@ -246,4 +417,12 @@ footer p {
 footer p a {
   color: #db0000;
   text-decoration: none;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .name-card {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);  
+  }
 }
