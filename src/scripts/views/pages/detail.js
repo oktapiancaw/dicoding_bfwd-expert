@@ -8,8 +8,14 @@ const DetailPage = {
             <h5>Detail Restaurant</h5>
             <hr/>
             <div class="resto__rate_place">
-              <p>4.5</p>
-              <p>Bandung</p>
+              <div>
+                <img src="./svg/MapIcon.svg" />
+                <p>Bandung</p>
+              </div>
+              <div>
+                <img src="./svg/RateIcon.svg" />
+                <p>4.5</p>
+              </div>
             </div>
           </div>
           <button class="resto__favorite_btn shadow"></button>

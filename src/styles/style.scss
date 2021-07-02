@@ -315,8 +315,20 @@ main {
       }
       .resto__rate_place{
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        margin: 0 5px;
+        div{
+          display: flex;
+          align-items: center;
+          color: #6c6c6c;
+          img{
+            margin-right: 5px;
+          }
+          p{
+            font-family: 'medi-Font';
+          }
+        }
       }
     }
     .resto__favorite_btn{
