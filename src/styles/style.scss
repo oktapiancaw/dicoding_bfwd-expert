@@ -1,4 +1,81 @@
+// [0] Settings
+// [1] Typography
+// [2] Navigation
+// [3] Main Content
+// [4] Card
+// [5] Footer
+// [6] Etc
+
+// [0] ================================================================
+/*
+  Settings
+*/
 $primary-color: #333;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.padx-1{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.padx-2{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.padx-3{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.padx-4{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.pady-1{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.pady-2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.pady-3{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.pady-4{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.pad-1{
+  padding: 5px;
+}
+.pad-2{
+  padding: 10px;
+}
+.pad-3{
+  padding: 15px;
+}
+.pad-4{
+  padding: 20px;
+}
+.shadow{
+  box-shadow: 3px 6px 13px rgba(33, 87, 8, 0.1);
+}
+
+// [1] ================================================================
+/*
+  Typography
+*/
 @font-face {
   font-family: 'regl-Font';
   src: url('/fonts/Poppins-Regular.ttf');
@@ -8,11 +85,11 @@ $primary-color: #333;
   src: url('/fonts/Poppins-Bold.ttf');
 }
 @font-face {
-  font-family: 'semi-Font';
+  font-family: 'medi-Font';
   src: url('/fonts/Poppins-SemiBold.ttf');
 }
 @font-face {
-  font-family: 'medi-Font';
+  font-family: 'semi-Font';
   src: url('/fonts/Poppins-Medium.ttf');
 }
 @font-face {
@@ -48,26 +125,21 @@ h4{
 h5{
   font-family: 'medi-Font';
   font-size: 16px;
+  letter-spacing: 1px;
 }
 a, p, span, li, tr{
   font-family: 'regl-Font';
   font-size: 12px;
 }
-* {
-  padding: 0;
-  margin: 0;
+.card, .resto__menu_card, .resto__review_card, .resto__title_box{
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-body {
-  background-color: #FFF;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
- 
- 
+// [2] ================================================================
 /*
-  AppBar
+  Navigation
 */
  
 .app-bar {
@@ -145,6 +217,7 @@ body {
   }
 }
  
+// [3] ================================================================
 /*
   Main Content
 */
@@ -160,29 +233,37 @@ main {
     display: flex;
     align-items: center;
     padding: 0 30px;
-    .jumbotron_img{
-      position: absolute;
-      left: 120px;
-      width: 100%;
-      height: 240px;
-      border-radius: 40px;
-      background-color: #aaaaaa;
-    }
-    h1{
-      z-index: 2;
-      font-size: 20px;
-      color: #FFF;
-      width: 80%;
-    }
+  }
+  .content{
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%;
+    background-color: #ECFFE3;
   }
 }
 
+// [3.1] Jumbotron
+
+.jumbotron{
+  .jumbotron_img{
+    position: absolute;
+    left: 120px;
+    width: 100%;
+    height: 240px;
+    border-radius: 40px;
+    background-color: #aaaaaa;
+  }
+  h1{
+    z-index: 2;
+    font-size: 20px;
+    color: #FFF;
+    width: 80%;
+  }
+}
+
+// [3.2] Content Main
+
 .content {
-  position: relative;
-  margin: 0 auto;
-  min-height: 100%;
-  background-color: #aaaaaa;
-  padding: 15px 20px;
   .content__heading {
     font-weight: normal;
     display: flex;
@@ -190,8 +271,7 @@ main {
     align-items: center;
     margin-bottom: 15px;
   }
-  .card-box{
-    padding-right: 20px;
+  .content__box{
     display: flex;
     align-items: center;
     flex-flow: row;
@@ -201,7 +281,7 @@ main {
       margin: 0 0 10px 0;
     }
   }
-  .horiz-slide{
+  .content__slider_x_box{
     position: relative;
     left: 0;
     overflow-x: scroll;
@@ -210,201 +290,157 @@ main {
       padding-right: 40px;
     }
   }
-  .card{
+}
+
+
+// [3.3] Content on Detail page
+#detail{
+  .detail__head{
     position: relative;
-    width: 240px;
-    box-sizing: border-box;
-    padding: 10px;
-    height: 200px;
-    border-radius: 10px;
-    background-color: white;
-    margin: 0 10px 0 0;
-    .name-card{
+    width: 100%;
+    padding-bottom: 60px;
+    background-color: #64B63D;
+    .resto__title_box{
       position: absolute;
-      background-color: rgba(255, 255, 255, 0.5);
-      top: 20px;
-      left: 0;
-      padding: 5px 20px;
-      border-radius: 0 5px 5px 0;
-      letter-spacing: 1px;
-    }
-    .img-card{
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      background: #333;
-      border-radius: 5px;
-      
-    }
-    .detail-card{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      box-sizing: border-box;
-      padding-top: 16px;
-      div:nth-child(2){
-        justify-content: center;
+      left: 20px;
+      bottom: -40px;
+      width: calc(100% - 130px);
+      height: 80px;
+      hr{
+        margin: 5px;
+        width: calc(100% - 10px);
+        border: none;
+        border-bottom: 1px solid #E4E4E4;
+
       }
-      div{
+      .resto__rate_place{
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        .btn-card{
-          box-sizing: border-box;
-          padding: 12px 20px;
-          border-radius: 5px;
-          background-color: #333;
-          color: #fff;
-          text-decoration: none;
-        }
       }
-      
     }
-    .skeleton{
-      *{
-        overflow: hidden;
-      }
-      *:before{
-        content: '';
-        display: block;
-        position: absolute;
-        left: -150px;
-        top: 0;
-        height: 100%;
-        width: 150px;
-        background: linear-gradient(to right, transparent, rgba(255,255,255,0.1) 60%, transparent);
-        animation: load 2s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
-      }
-      .img-card{
-        position: relative;
-      }
-      .detail-card div{
-        position: relative;
-        display: block;
-        border-radius: 5px;
-        width: 100%;
-        height: 40px;
-        &:nth-child(1){
-          margin-right: 10px;
-          background-color: #aaa;
+    .resto__favorite_btn{
+      position: absolute;
+      right: 20px;
+      bottom: -40px;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFF;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+  .detail__body{
+    padding-top: 60px;
+    *>h5{
+      margin-bottom: 5px;
+    }
+    &>div{
+      margin: 0 10px 30px 10px;
+    }
+    .resto__menu{
+      .resto__menu_box{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        border-radius: 10px;
+        .resto__menu_card{
+          position: relative;
+          width: 100%;
+          span{
+            margin-bottom: 5px;
+            font-family: 'medi-Font';
+            color: #6c6c6c;
+          }
+          ul li{
+            margin-left: 20px;
+          }
         }
-        &:nth-child(2){
-          margin-left: 10px;
-          background-color: #333;
+      }
+    }
+    .resto__review{
+      .resto__review_card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .review{
+          &__name{
+            font-family: 'medi-Font';
+            margin-bottom: 5px;
+          }
+          &__text{
+            text-align: center;
+            margin-bottom: 10px;
+          }
+          &__date{
+            font-size: 10px;
+            font-family: 'thin-Font';
+          }
         }
       }
     }
   }
-  &.withoutpad{
-    padding: 15px 0;
-    &>div, h5{
-      padding-left: 20px;
+}
+
+// [4] ================================================================
+/*
+  Card
+*/
+
+.card{
+  position: relative;
+  width: 240px;
+  height: 200px;
+  margin: 0 10px 0 0;
+  .card__title{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 20px;
+    left: 0;
+    padding: 5px 20px;
+    border-radius: 0 5px 5px 0;
+    letter-spacing: 1px;
+  }
+  .card__img_head{
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: #333;
+    border-radius: 5px;
+    
+  }
+  .card__detail{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 16px;
+    div:nth-child(2){
+      justify-content: center;
+    }
+    div{
+      display: flex;
+      align-items: center;
+      .card__btn{
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 }
 
  
-/*
-  Movies
-*/
- 
-.movies {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin: 32px 0;
-}
- 
-@keyframes load {
-  from {
-      left: -150px;
-  }
-  to   {
-      left: 100%;
-  }
-}
-/*
-  Movie Item
-*/
- 
-.movie-item {
-  width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-}
- 
-.movie-item__header {
-  position: relative;
-}
- 
-.movie-item .movie-item__header .movie-item__header__poster {
-  width: 100%;
-}
- 
-.movie-item .movie-item__header .movie-item__header__rating {
-  position: absolute;
-  padding: 8px;
-  bottom: 20px;
-  left: 0;
-  display: inline-block;
-  background-color: black;
-  color: white;
-}
- 
-.movie-item .movie-item__header .movie-item__header__rating .movie-item__header__rating__score {
-  margin-left: 10px;
-}
- 
-.movie-item .movie-item__content {
-  padding: 16px;
-}
- 
-.movie-item .movie-item__content h3 {
-  margin: 0 0 10px 0;
-}
- 
-.movie-item .movie-item__content h3 a {
-  color: #db0000;
-  text-decoration: none;
-}
- 
-.movie-item .movie-item__content p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
- 
- 
-/*
-  Movie
-*/
- 
-.movie {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 800px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px 16px;
-}
- 
-.movie .movie__poster {
-  width: 100%;
-  max-width: 400px;
-}
- 
-.movie .movie__info h4 {
-  margin: 8px 0;
-}
- 
- 
- 
+// [5] ================================================================
 /*
   Footer
 */
- 
 footer {
   padding: 16px;
 }
@@ -415,10 +451,14 @@ footer p {
 }
  
 footer p a {
-  color: #db0000;
+  color: #1258b4;
   text-decoration: none;
 }
 
+// [6] ================================================================
+/*
+  etc
+*/
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .name-card {
     -webkit-backdrop-filter: blur(10px);

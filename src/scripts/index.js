@@ -1,5 +1,6 @@
 import 'regenerator-runtime'
 import '../styles/style.scss'
+import '../styles/skeleton.scss'
 import '../styles/responsive.scss'
 import App from './views/app'
 

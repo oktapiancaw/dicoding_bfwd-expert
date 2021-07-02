@@ -5,21 +5,21 @@ import { Jumbotron } from '../templates/main'
 const HomePage = {
   async render () {
     // return Jumbotron + `
-    // <div class="content withoutpad">
+    // <div class="content">
     //   <h5 class="content__heading">Favorite Restaurant & Cafe </h5>
-    //   <div class="horiz-slide">
-    //     <div class="slider" id="card-container">
+    //   <div class="content__slider_x_box">
+    //     <div class="slider" id="card_container">
     //     </div>
     //   </div>
     // </div>
     // `
     return Jumbotron + `
-    <div class="content withoutpad">
+    <div class="content padx-4 pady-3">
       <h5 class="content__heading">Restaurant & Cafe </h5>
-      <div class="card-box" id="card-container">
-        <div class="card skeleton" id="skeleton-card">
-          <img class="img-card" />
-          <div class="detail-card"> 
+      <div class="content__box padx-2" id="card_container">
+        <div class="card skeleton" id="skeleton_card">
+          <img class="card__img_head" />
+          <div class="card__detail"> 
             <div>
             </div>
             <div>
@@ -33,8 +33,8 @@ const HomePage = {
   },
   async afterRender () {
     const resto = await RestoSource.normalList()
-    const cardContainer = document.querySelector('#card-container')
-    const skeleton = document.querySelector('#skeleton-card')
+    const cardContainer = document.querySelector('#card_container')
+    const skeleton = document.querySelector('#skeleton_card')
     if (resto) {
       skeleton.remove()
     }
