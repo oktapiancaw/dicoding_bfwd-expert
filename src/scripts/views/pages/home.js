@@ -17,7 +17,7 @@ const HomePage = {
     <div class="content padx-4 pady-3">
       <h5 class="content__heading">Restaurant & Cafe </h5>
       <div class="content__box padx-2" id="card_container">
-        <div class="card skeleton" id="skeleton_card">
+        <div class="card shadow skeleton" id="skeleton_card">
           <img class="card__img_head" />
           <div class="card__detail"> 
             <div>
@@ -38,6 +38,7 @@ const HomePage = {
     if (resto) {
       skeleton.remove()
     }
+    console.log(resto)
     resto.forEach((data) => {
       cardContainer.innerHTML += createRestoCard(data)
     })

@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config'
 
 const createRestoCard = (resto) => `
-  <div class="card">
+  <div class="card shadow">
     <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" class="card__img_head" />
     <span class="card__title">${resto.name}</span>
     <div class="card__detail"> 
@@ -10,7 +10,7 @@ const createRestoCard = (resto) => `
         <p>${resto.city}</p>
       </div>
       <div>
-        <a href="#" class="card__btn">
+        <a href="${`/#/detail/${resto.id}`}" class="card__btn">
           See Detail
         </a>
       </div>
