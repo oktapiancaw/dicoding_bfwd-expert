@@ -30,6 +30,7 @@
   "dependencies": {
     "copy-webpack-plugin": "^6.0.2",
     "html-webpack-plugin": "^4.3.0",
+    "idb": "^6.1.2",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1",
     "sweetalert2": "^11.0.18",

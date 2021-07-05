@@ -3,7 +3,7 @@ import '../components/review/form-review'
 import '../components/menu/menu-list'
 import RestoSource from '../../data/resto-source'
 import UrlParser from '../../routes/url-parser'
-import { createRestoDetail } from '../templates/resto'
+import { createRestoDetail, createLikeButtonTemplate } from '../templates/resto'
 
 const DetailPage = {
   async render () {
@@ -17,6 +17,8 @@ const DetailPage = {
     const detailPage = document.querySelector('#detail')
     detailPage.innerHTML = createRestoDetail(resto)
 
+    const detailHead = document.querySelector('#detail_head')
+    detailHead.innerHTML += createLikeButtonTemplate()
     // Menu
     const menu = document.querySelector('#resto_menu')
     const restaMenu = document.createElement('resta-menu')
