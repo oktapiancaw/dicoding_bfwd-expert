@@ -34,7 +34,7 @@ const createRestoDetail = (resto) => `
         </div>
       </div>
     </div>
-    <div class="resto__add_review">
+    <div class="resto__add_review" id="resto_add_review">
       <h5>Add Reviews</h5>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import '../components/review/resta-review'
+import '../components/review/form-review'
 import '../components/menu/menu-list'
 import RestoSource from '../../data/resto-source'
 import UrlParser from '../../routes/url-parser'
@@ -28,6 +29,16 @@ const DetailPage = {
       const reviewBox = document.createElement('resta-review')
       reviewBox.reviewData = data
       reviews.appendChild(reviewBox)
+    })
+    const addReview = document.querySelector('#resto_add_review')
+    const formReview = document.createElement('form-review')
+    addReview.appendChild(formReview)
+
+    document.querySelector('#resto_add_btn').addEventListener('click', () => {
+      formReview.idResto = resto.id
+      if (formReview.value !== '') {
+        RestoSource.sendReview(formReview.value)
+      }
     })
   }
 }

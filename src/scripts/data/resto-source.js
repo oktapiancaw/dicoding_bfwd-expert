@@ -29,6 +29,40 @@ class RestoSource {
     const responseJson = await response.json()
     return responseJson.restaurant
   }
+
+  static async sendReview (data) {
+    try {
+      const response = await fetch(API_ENDPOINT.SEND_DATA, {
+        method: 'POST',
+        headers: {
+          'X-Auth-Token': 12345,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      const responseJson = await response.json()
+      if (!responseJson.error) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Your Reviews has been send!, Thank you'
+        })
+        return responseJson
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Sorry...',
+          text: 'Something wrong happened!'
+        })
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error
+      })
+    }
+  }
 }
 
 export default RestoSource

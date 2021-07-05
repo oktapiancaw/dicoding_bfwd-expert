@@ -10,7 +10,9 @@
 /*
   Settings
 */
-$primary-color: #333;
+$primary-color: #64B63D;
+$dark-color: #215708;
+$soft-color: #ECFFE3;
 
 * {
   padding: 0;
@@ -130,6 +132,10 @@ h5{
 a, p, span, li, tr{
   font-family: 'regl-Font';
   font-size: 12px;
+}
+button{
+  font-family: 'regl-Font';
+  font-size: 14px;
 }
 .card, .resto__menu_card, .resto__review_card, .resto__title_box{
   background-color: #FFF;
@@ -404,6 +410,41 @@ main {
             font-family: 'thin-Font';
           }
         }
+      }
+    }
+    .resto__add_review{
+      input, textarea{
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+        border: 2px solid #6c6c6c;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-family: 'regl-Font';
+        &:focus, &:focus-visible{
+          outline: #64B63D auto 1px;
+        }
+      }
+      label{
+        font-family: 'medi-Font';
+        color: #6c6c6c;
+        margin-left: 10px;
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      textarea{
+        font-family: 'regl-Font';
+        resize: none;
+        height: 80px;
+      }
+      .resto__add_btn{
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #64B63D;
+        color: #FFF;
+        border: none;
+        border-radius: 5px;
       }
     }
   }
