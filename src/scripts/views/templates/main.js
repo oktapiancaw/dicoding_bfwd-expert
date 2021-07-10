@@ -1,7 +1,7 @@
 const Jumbotron = `
   <div class="jumbotron">
-    <h1>Lorem ipsum dolor sit amet.</h1>
-    <div class="jumbotron_img"></div>
+    <h1>Easy way to find the nearest and best place to eat</h1>
+    <img src="./Jumbotron.png" class="jumbotron_img" />
     </div>
   </div>
 `

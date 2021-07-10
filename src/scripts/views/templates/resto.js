@@ -22,22 +22,29 @@ const createRestoDetail = (resto) => `
     </div>
   </div>
   <div class="detail__body pad-4">
-    <div class="resto__desc">
-      <h5>Deskripsi</h5>
-      <p>${resto.description}</p>
-    </div>
-    <div class="resto__menu" id="resto_menu">
-      <h5>Menu</h5>
-    </div>
-    <div class="resto__review">
-      <h5>Review</h5>
-      <div class="content__slider_x_box">
-        <div class="slider" id="resto_reviews">
-        </div>
+    <div class="only_web__grid">
+      <div class="resto__desc">
+        <h5>Deskripsi</h5>
+        <p>${resto.description}</p>
+        
+        <h5 class="address_head">Alamat Lengkap :</h5>
+        <p>${resto.address}, ${resto.city}</p>
+      </div>
+      <div class="resto__menu" id="resto_menu">
+        <h5>Menu</h5>
       </div>
     </div>
-    <div class="resto__add_review" id="resto_add_review">
-      <h5>Add Reviews</h5>
+    <div class="only_web__grid">
+      <div class="resto__review">
+        <h5>Review</h5>
+        <div class="content__slider_x_box">
+          <div class="slider" id="resto_reviews">
+          </div>
+        </div>
+      </div>
+      <div class="resto__add_review" id="resto_add_review">
+        <h5>Add Reviews</h5>
+      </div>
     </div>
   </div>
 `
