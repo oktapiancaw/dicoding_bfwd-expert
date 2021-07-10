@@ -3,7 +3,9 @@ import '../components/review/form-review'
 import '../components/menu/menu-list'
 import RestoSource from '../../data/resto-source'
 import UrlParser from '../../routes/url-parser'
+// eslint-disable-next-line no-unused-vars
 import { createRestoDetail, createLikeButtonTemplate } from '../templates/resto'
+import LikeButtonInitiator from '../../utils/like-button-initiator'
 
 const DetailPage = {
   async render () {
@@ -17,8 +19,10 @@ const DetailPage = {
     const detailPage = document.querySelector('#detail')
     detailPage.innerHTML = createRestoDetail(resto)
 
-    const detailHead = document.querySelector('#detail_head')
-    detailHead.innerHTML += createLikeButtonTemplate()
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#resto_fav_btn_container'),
+      resta: resto
+    })
     // Menu
     const menu = document.querySelector('#resto_menu')
     const restaMenu = document.createElement('resta-menu')

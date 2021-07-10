@@ -349,14 +349,18 @@ main {
       bottom: -40px;
       width: 80px;
       height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #FFF;
-      border-radius: 10px;
-      border: none;
-      &.liked{
-        background-color: $dark-color;
+      button{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFF;
+        border-radius: 10px;
+        border: none;
+        &.liked{
+          background-color: $dark-color;
+        }
       }
     }
   }

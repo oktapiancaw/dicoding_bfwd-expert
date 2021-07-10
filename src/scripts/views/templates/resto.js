@@ -17,6 +17,9 @@ const createRestoDetail = (resto) => `
         </div>
       </div>
     </div>
+    <div class="resto__favorite_btn" id="resto_fav_btn_container">
+
+    </div>
   </div>
   <div class="detail__body pad-4">
     <div class="resto__desc">
@@ -39,7 +42,7 @@ const createRestoDetail = (resto) => `
   </div>
 `
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="resto__favorite_btn shadow">
+  <button aria-label="like this movie" id="likeButton" class="shadow">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Iconly/Broken/Heart">
         <g id="Heart">
@@ -50,7 +53,7 @@ const createLikeButtonTemplate = () => `
   </button>
 `
 const createLikedButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="resto__favorite_btn liked shadow">
+  <button aria-label="like this movie" id="likeButton" class="liked shadow">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Iconly/Broken/Heart">
         <g id="Heart">
