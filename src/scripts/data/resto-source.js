@@ -25,9 +25,30 @@ class RestoSource {
   }
 
   static async detailResta (id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id))
-    const responseJson = await response.json()
-    return responseJson.restaurant
+    try {
+      const response = await fetch(API_ENDPOINT.DETAIL(id))
+      const responseJson = await response.json()
+      if (!responseJson.error) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Your Reviews has been send!, Thank you'
+        })
+        return responseJson.restaurant
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Sorry...',
+          text: 'Data not founds'
+        })
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error
+      })
+    }
   }
 
   static async sendReview (data) {
