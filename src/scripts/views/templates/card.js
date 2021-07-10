@@ -17,5 +17,49 @@ const createRestoCard = (resto) => `
     </div>
   </div>
 `
+const skeletonCard = `
+  <div class="card shadow skeleton skeleton_card">
+    <img class="card__img_head" />
+    <div class="card__detail"> 
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="card shadow skeleton skeleton_card">
+    <img class="card__img_head" />
+    <div class="card__detail"> 
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="card shadow skeleton skeleton_card">
+    <img class="card__img_head" />
+    <div class="card__detail"> 
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="card shadow skeleton skeleton_card">
+    <img class="card__img_head" />
+    <div class="card__detail"> 
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="card shadow skeleton skeleton_card">
+    <img class="card__img_head" />
+    <div class="card__detail"> 
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="card shadow skeleton skeleton_card">
+    <img class="card__img_head" />
+    <div class="card__detail"> 
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+`
 
-export { createRestoCard }
+export { createRestoCard, skeletonCard }

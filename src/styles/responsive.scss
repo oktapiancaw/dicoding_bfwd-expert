@@ -1,29 +1,85 @@
-@media screen and (min-width: 520px) {
-  
+
+$primary-color: #64B63D;
+$dark-color: #215708;
+$soft-color: #ECFFE3;
+@media only screen and (min-width: 520px) {
+  main{
+    .jumbotron{
+      height: 70vh;
+      &_img{
+        height: 80% !important;
+      }
+    }
+  }
+  .content__box{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    .card{
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
 }
-@media screen and (min-width: 650px) {
-  
-}
- 
-@media screen and (min-width: 800px) {
-  .app-bar .app-bar__brand h1 {
-      font-size: 2em;
+@media only screen and (min-width: 650px) {
+  main{
+    .jumbotron{
+      &_img{
+        left: 0 !important;
+        border-radius: 0 !important;
+        height: 100% !important;
+      }
+    }
+  }
+  .app-bar{
+    height: 80px;
+
+    &__menu, &__brand{
+      display: none !important;
+    }
+    &__navigation{
+      position: fixed !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $primary-color;
+      left: 0 !important;
+      width: 100% !important;
+      height: 80px !important;
+      ul{
+        display: flex;
+        align-items: center;
+        li{
+          padding: 0 20px !important;
+          a{
+            margin-bottom: 0 !important;
+            img{
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
  
-@media screen and (min-width: 850px) {
-  .movies {
-      grid-template-columns: repeat(3, 1fr);
+@media only screen and (min-width: 850px) {
+  .content__box{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    .card{
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
   }
 }
  
-@media screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
   .movies {
       grid-template-columns: repeat(4, 1fr);
   }
 }
  
-@media screen and (min-width: 1600px) {
+@media only screen and (min-width: 1600px) {
   .movies {
       grid-template-columns: repeat(5, 1fr);
   }

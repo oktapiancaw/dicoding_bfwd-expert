@@ -6,7 +6,7 @@
 }
 .card{
 
-  .skeleton{
+  &.skeleton{
     *{
       overflow: hidden;
     }
@@ -23,6 +23,7 @@
     }
     .card__img_head{
       position: relative;
+      background-color: #333;
     }
     .card__detail div{
       position: relative;

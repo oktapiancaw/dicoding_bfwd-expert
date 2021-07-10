@@ -1,5 +1,5 @@
 import RestoSource from '../../data/resto-source'
-import { createRestoCard } from '../templates/card'
+import { createRestoCard, skeletonCard } from '../templates/card'
 import { Jumbotron } from '../templates/main'
 
 const HomePage = {
@@ -17,16 +17,7 @@ const HomePage = {
     <div class="content padx-4 pady-3">
       <h5 class="content__heading">Restaurant & Cafe </h5>
       <div class="content__box padx-2" id="card_container">
-        <div class="card shadow skeleton" id="skeleton_card">
-          <img class="card__img_head" />
-          <div class="card__detail"> 
-            <div>
-            </div>
-            <div>
-            </div>
-          </div>
-        </div>
-        
+        ` + skeletonCard + `
       </div>
     </div>
     `
@@ -34,11 +25,9 @@ const HomePage = {
   async afterRender () {
     const resto = await RestoSource.normalList()
     const cardContainer = document.querySelector('#card_container')
-    const skeleton = document.querySelector('#skeleton_card')
     if (resto) {
-      skeleton.remove()
+      cardContainer.innerHTML = ''
     }
-    console.log(resto)
     resto.forEach((data) => {
       cardContainer.innerHTML += createRestoCard(data)
     })
