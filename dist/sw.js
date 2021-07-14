@@ -3,7 +3,6 @@ var serviceWorkerOption = {
     "/bundle.js",
     "/Jumbotron.png",
     "/OFL.txt",
-    "/deco.png",
     "/favicon.png",
     "/manifest.json",
     "/fonts/Poppins-Black.ttf",
