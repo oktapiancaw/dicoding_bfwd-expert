@@ -2,7 +2,9 @@ import CONFIG from '../../globals/config'
 
 const createRestoDetail = (resto) => `
   <div class="detail__head pad-4" id="detail_head">
-    <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" class="detail__image" />
+    <img src="${
+      CONFIG.BASE_IMAGE_URL + resto.pictureId
+    }" class="detail__image" />
     <div class="resto__title_box shadow">
       <h5>${resto.name}</h5>
       <hr/>
@@ -49,7 +51,7 @@ const createRestoDetail = (resto) => `
   </div>
 `
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="shadow">
+  <button aria-label="like this resta" id="likeButton" class="shadow">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Iconly/Broken/Heart">
         <g id="Heart">
@@ -60,7 +62,7 @@ const createLikeButtonTemplate = () => `
   </button>
 `
 const createLikedButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="liked shadow">
+  <button aria-label="unlike this resta" id="likeButton" class="liked shadow">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="Iconly/Broken/Heart">
         <g id="Heart">
@@ -71,4 +73,8 @@ const createLikedButtonTemplate = () => `
   </button>
 `
 
-export { createRestoDetail, createLikeButtonTemplate, createLikedButtonTemplate }
+export {
+  createRestoDetail,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+}
