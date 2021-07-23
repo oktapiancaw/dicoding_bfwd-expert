@@ -536,6 +536,16 @@ footer p a {
 /*
   etc
 */
+#resta_not_found{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: 'semi-font';
+  color: #767676;
+}
 
 .skip-link {
   position: absolute;
