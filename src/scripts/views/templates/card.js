@@ -2,7 +2,9 @@ import CONFIG from '../../globals/config'
 
 const createRestoCard = (resto) => `
   <div class="card shadow">
-    <img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" class="card__img_head" />
+    <img src="${
+      CONFIG.BASE_IMAGE_URL + resto.pictureId
+    }" class="card__img_head lazyload" />
     <span class="card__title">${resto.name}</span>
     <div class="card__detail"> 
       <div>

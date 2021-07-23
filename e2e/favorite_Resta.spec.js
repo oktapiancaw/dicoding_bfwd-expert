@@ -1,6 +1,6 @@
 const assert = require('assert')
 /* eslint-disable no-undef */
-Feature('Liking Resta')
+Feature('Batal & Menyukai Resta')
 
 Before(({ I }) => {
   I.amOnPage('/#/favorite')
@@ -26,7 +26,7 @@ Scenario('Menyukai Restoran', async ({ I }) => {
   assert.strictEqual(firstRestaTitle, likedResta)
 })
 
-Scenario('Batal Menyukai Restoran', async ({ I }) => {
+Scenario('Batal Menyukai Restoran', ({ I }) => {
   I.click(locate('.card a').first())
 
   I.seeElement('#likeButton')

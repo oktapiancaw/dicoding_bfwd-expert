@@ -1,7 +1,10 @@
 var serviceWorkerOption = {
   "assets": [
+    "/0.bundle.js",
+    "/1.bundle.js",
+    "/2.bundle.js",
+    "/3.bundle.js",
     "/bundle.js",
-    "/Jumbotron.png",
     "/OFL.txt",
     "/favicon.png",
     "/manifest.json",
@@ -31,6 +34,9 @@ var serviceWorkerOption = {
     "/icons/StomafinIcon-512x512.png",
     "/icons/StomafinIcon-72x72.png",
     "/icons/StomafinIcon-96x96.png",
+    "/images/Jumbotron-medium.jpg",
+    "/images/Jumbotron-small.jpg",
+    "/images/Jumbotron.jpg",
     "/svg/DashboardIcon.svg",
     "/svg/HomeIcon.svg",
     "/svg/MapIcon.svg",
