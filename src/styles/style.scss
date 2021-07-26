@@ -501,6 +501,13 @@ main {
     justify-content: space-between;
     box-sizing: border-box;
     padding-top: 10px;
+    div:nth-child(1){
+      img{
+        width: 28px;
+        height: 28px;
+        margin-right: 8px;
+      }
+    }
     div:nth-child(2){
       justify-content: center;
     }
