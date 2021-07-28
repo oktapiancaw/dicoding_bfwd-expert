@@ -1,1 +1,875 @@
-!function(e){function r(r){for(var n,u,i=r[0],c=r[1],s=r[2],p=0,l=[];p<i.length;p++)u=i[p],Object.prototype.hasOwnProperty.call(a,u)&&a[u]&&l.push(a[u][0]),a[u]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(f&&f(r);l.length;)l.shift()();return o.push.apply(o,s||[]),t()}function t(){for(var e,r=0;r<o.length;r++){for(var t=o[r],n=!0,i=1;i<t.length;i++){var c=t[i];0!==a[c]&&(n=!1)}n&&(o.splice(r--,1),e=u(u.s=t[0]))}return e}var n={},a={4:0},o=[];function u(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,u),t.l=!0,t.exports}u.m=e,u.c=n,u.d=function(e,r,t){u.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},u.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},u.t=function(e,r){if(1&r&&(e=u(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(u.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)u.d(t,n,function(r){return e[r]}.bind(null,n));return t},u.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return u.d(r,"a",r),r},u.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},u.p="";var i=window.webpackJsonp=window.webpackJsonp||[],c=i.push.bind(i);i.push=r,i=i.slice();for(var s=0;s<i.length;s++)r(i[s]);var f=c;o.push([32,2,0,1,3]),t()}({0:function(e,r,t){"use strict";var n=t(33),a={KEY:"12345",BASE_URL:"https://dicoding-restaurant-api.el.r.appspot.com/",BASE_IMAGE_URL:"https://restaurant-api.dicoding.dev/images/small/",CACHE_NAME:Object(n.a)(),DATABASE_NAME:"restaurant-database",DATABASE_VERSION:1,OBJECT_STORE_NAME:"resto"};r.a=a},13:function(e,r,t){"use strict";var n=t(18),a=t(15),o=t(11),u={"/":o.a,"/home":o.a,"/favorite":a.a,"/detail/:id":n.a};r.a=u},14:function(e,r,t){"use strict";var n=t(2),a=t(4);function o(e,r,t,n,a,o,u){try{var i=e[o](u),c=i.value}catch(e){return void t(e)}i.done?r(c):Promise.resolve(c).then(n,a)}function u(e){return function(){var r=this,t=arguments;return new Promise((function(n,a){var u=e.apply(r,t);function i(e){o(u,n,a,i,c,"next",e)}function c(e){o(u,n,a,i,c,"throw",e)}i(void 0)}))}}var i={init:function(e){var r=this;return u(regeneratorRuntime.mark((function t(){var n,a;return regeneratorRuntime.wrap((function(t){for(;;)switch(t.prev=t.next){case 0:return n=e.likeButtonContainer,a=e.resta,r._likeButtonContainer=n,r._resta=a,t.next=5,r._renderButton();case 5:case"end":return t.stop()}}),t)})))()},_renderButton:function(){var e=this;return u(regeneratorRuntime.mark((function r(){var t;return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return t=e._resta.id,r.next=3,e._isRestaExist(t);case 3:if(!r.sent){r.next=7;break}e._renderLiked(),r.next=8;break;case 7:e._renderLike();case 8:case"end":return r.stop()}}),r)})))()},_isRestaExist:function(e){return u(regeneratorRuntime.mark((function r(){var t;return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return r.next=2,n.a.getResta(e);case 2:return t=r.sent,r.abrupt("return",!!t);case 4:case"end":return r.stop()}}),r)})))()},_renderLike:function(){var e=this;this._likeButtonContainer.innerHTML=Object(a.a)(),document.querySelector("#likeButton").addEventListener("click",u(regeneratorRuntime.mark((function r(){return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return r.next=2,n.a.putResta(e._resta);case 2:e._renderButton();case 3:case"end":return r.stop()}}),r)}))))},_renderLiked:function(){var e=this;this._likeButtonContainer.innerHTML=Object(a.b)(),document.querySelector("#likeButton").addEventListener("click",u(regeneratorRuntime.mark((function r(){return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return r.next=2,n.a.deleteResta(e._resta.id);case 2:e._renderButton();case 3:case"end":return r.stop()}}),r)}))))}};r.a=i},16:function(e,r,t){"use strict";r.a={init:function(e){var r=this,t=e.button,n=e.drawer,a=e.content;t.addEventListener("click",(function(e){r._toggleDrawer(e,n)})),a.addEventListener("click",(function(e){r._closeDrawer(e,n)}))},_toggleDrawer:function(e,r){e.stopPropagation(),r.classList.toggle("open")},_closeDrawer:function(e,r){e.stopPropagation(),r.classList.remove("open")}}},2:function(e,r,t){"use strict";var n=t(19),a=t(0);function o(e,r,t,n,a,o,u){try{var i=e[o](u),c=i.value}catch(e){return void t(e)}i.done?r(c):Promise.resolve(c).then(n,a)}function u(e){return function(){var r=this,t=arguments;return new Promise((function(n,a){var u=e.apply(r,t);function i(e){o(u,n,a,i,c,"next",e)}function c(e){o(u,n,a,i,c,"throw",e)}i(void 0)}))}}var i=a.a.DATABASE_NAME,c=a.a.DATABASE_VERSION,s=a.a.OBJECT_STORE_NAME,f=Object(n.a)(i,c,{upgrade:function(e){e.createObjectStore(s,{keyPath:"id"})}}),p={getResta:function(e){return u(regeneratorRuntime.mark((function r(){return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:if(e){r.next=2;break}return r.abrupt("return");case 2:return r.next=4,f;case 4:return r.abrupt("return",r.sent.get(s,e));case 5:case"end":return r.stop()}}),r)})))()},getAllRestas:function(){return u(regeneratorRuntime.mark((function e(){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,f;case 2:return e.abrupt("return",e.sent.getAll(s));case 3:case"end":return e.stop()}}),e)})))()},putResta:function(e){return u(regeneratorRuntime.mark((function r(){return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:if(e.hasOwnProperty("id")){r.next=2;break}return r.abrupt("return");case 2:return r.next=4,f;case 4:return r.abrupt("return",r.sent.put(s,e));case 5:case"end":return r.stop()}}),r)})))()},deleteResta:function(e){return u(regeneratorRuntime.mark((function r(){return regeneratorRuntime.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return r.next=2,f;case 2:return r.abrupt("return",r.sent.delete(s,e));case 3:case"end":return r.stop()}}),r)})))()}};r.a=p},32:function(e,r,t){"use strict";t.r(r);t(20),t(21),t(23),t(25);var n=t(12),a=t(17),o=t.n(a);function u(e,r,t,n,a,o,u){try{var i=e[o](u),c=i.value}catch(e){return void t(e)}i.done?r(c):Promise.resolve(c).then(n,a)}var i=function(){var e,r=(e=regeneratorRuntime.mark((function e(){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(!("serviceWorker"in navigator)){e.next=4;break}return e.next=3,o.a.register();case 3:return e.abrupt("return");case 4:console.log("Service worker not supported in this browser");case 5:case"end":return e.stop()}}),e)})),function(){var r=this,t=arguments;return new Promise((function(n,a){var o=e.apply(r,t);function i(e){u(o,n,a,i,c,"next",e)}function c(e){u(o,n,a,i,c,"throw",e)}i(void 0)}))});return function(){return r.apply(this,arguments)}}(),c=(t(10),t(31),new n.a({button:document.querySelector("#hamburgerButton"),drawer:document.querySelector("#navigationDrawer"),content:document.querySelector("#mainContent")}));window.addEventListener("hashchange",(function(){c.renderPage()})),window.addEventListener("load",(function(){c.renderPage(),i()}))},5:function(e,r,t){"use strict";var n=t(1),a=t.n(n),o=t(0),u={GET_LIST:"".concat(o.a.BASE_URL,"list"),DETAIL:function(e){return"".concat(o.a.BASE_URL,"detail/").concat(e)},SEND_DATA:"".concat(o.a.BASE_URL,"review")};function i(e,r,t,n,a,o,u){try{var i=e[o](u),c=i.value}catch(e){return void t(e)}i.done?r(c):Promise.resolve(c).then(n,a)}function c(e){return function(){var r=this,t=arguments;return new Promise((function(n,a){var o=e.apply(r,t);function u(e){i(o,n,a,u,c,"next",e)}function c(e){i(o,n,a,u,c,"throw",e)}u(void 0)}))}}function s(e,r){for(var t=0;t<r.length;t++){var n=r[t];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var f=function(){function e(){!function(e,r){if(!(e instanceof r))throw new TypeError("Cannot call a class as a function")}(this,e)}var r,t,n,o,i,f;return r=e,t=null,n=[{key:"normalList",value:(f=c(regeneratorRuntime.mark((function e(){var r,t;return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.prev=0,e.next=3,fetch(u.GET_LIST);case 3:return r=e.sent,e.next=6,r.json();case 6:if((t=e.sent).error){e.next=11;break}return e.abrupt("return",t.restaurants);case 11:a.a.fire({icon:"error",title:"Sorry...",text:"Data not founds"});case 12:e.next=17;break;case 14:e.prev=14,e.t0=e.catch(0),a.a.fire({icon:"error",title:"Oops...",text:e.t0});case 17:case"end":return e.stop()}}),e,null,[[0,14]])}))),function(){return f.apply(this,arguments)})},{key:"detailResta",value:(i=c(regeneratorRuntime.mark((function e(r){var t,n;return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.prev=0,e.next=3,fetch(u.DETAIL(r));case 3:return t=e.sent,e.next=6,t.json();case 6:if((n=e.sent).error){e.next=11;break}return e.abrupt("return",n.restaurant);case 11:a.a.fire({icon:"error",title:"Sorry...",text:"Data not founds"});case 12:e.next=17;break;case 14:e.prev=14,e.t0=e.catch(0),a.a.fire({icon:"error",title:"Oops...",text:e.t0});case 17:case"end":return e.stop()}}),e,null,[[0,14]])}))),function(e){return i.apply(this,arguments)})},{key:"sendReview",value:(o=c(regeneratorRuntime.mark((function e(r){var t,n;return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.prev=0,e.next=3,fetch(u.SEND_DATA,{method:"POST",headers:{"X-Auth-Token":12345,"Content-Type":"application/json"},body:JSON.stringify(r)});case 3:return t=e.sent,e.next=6,t.json();case 6:if((n=e.sent).error){e.next=12;break}return a.a.fire({icon:"success",title:"Success!",text:"Your Reviews has been send!, Thank you"}),e.abrupt("return",n);case 12:a.a.fire({icon:"error",title:"Sorry...",text:"Something wrong happened!"});case 13:e.next=18;break;case 15:e.prev=15,e.t0=e.catch(0),a.a.fire({icon:"error",title:"Oops...",text:e.t0});case 18:case"end":return e.stop()}}),e,null,[[0,15]])}))),function(e){return o.apply(this,arguments)})}],t&&s(r.prototype,t),n&&s(r,n),e}();r.a=f},6:function(e,r,t){"use strict";var n={parseActiveWithCombiner:function(){var e=window.location.hash.slice(1).toLocaleLowerCase(),r=this._urlSplitter(e);return this._urlCombiner(r)},parseAcvtiveUrlWithoutCombiner:function(){var e=window.location.hash.slice(1).toLowerCase();return this._urlSplitter(e)},_urlSplitter:function(e){var r=e.split("/");return{resource:r[1]||null,id:r[2]||null,verb:r[3]||null}},_urlCombiner:function(e){return(e.resource?"/".concat(e.resource):"/")+(e.id?"/:id":"")+(e.verb?"/".concat(e.verb):"")}};r.a=n}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		4: 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push([32,2,0,1,3]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(33);
+
+var CONFIG = {
+  KEY: '12345',
+  BASE_URL: 'https://dicoding-restaurant-api.el.r.appspot.com/',
+  BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/small/',
+  CACHE_NAME: Object(uuid__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(),
+  DATABASE_NAME: 'restaurant-database',
+  DATABASE_VERSION: 1,
+  OBJECT_STORE_NAME: 'resto'
+};
+/* harmony default export */ __webpack_exports__["a"] = (CONFIG);
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _views_pages_detail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+/* harmony import */ var _views_pages_favorite__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
+/* harmony import */ var _views_pages_home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+
+
+
+var routes = {
+  '/': _views_pages_home__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"],
+  '/home': _views_pages_home__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"],
+  '/favorite': _views_pages_favorite__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"],
+  '/detail/:id': _views_pages_detail__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]
+};
+/* harmony default export */ __webpack_exports__["a"] = (routes);
+
+/***/ }),
+
+/***/ 14:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _data_favoriteresta_idb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _views_templates_resto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var LikeButtonInitiator = {
+  init: function init(_ref) {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var likeButtonContainer, resta;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              likeButtonContainer = _ref.likeButtonContainer, resta = _ref.resta;
+              _this._likeButtonContainer = likeButtonContainer;
+              _this._resta = resta;
+              _context.next = 5;
+              return _this._renderButton();
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  _renderButton: function _renderButton() {
+    var _this2 = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      var id;
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              id = _this2._resta.id;
+              _context2.next = 3;
+              return _this2._isRestaExist(id);
+
+            case 3:
+              if (!_context2.sent) {
+                _context2.next = 7;
+                break;
+              }
+
+              _this2._renderLiked();
+
+              _context2.next = 8;
+              break;
+
+            case 7:
+              _this2._renderLike();
+
+            case 8:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
+  _isRestaExist: function _isRestaExist(id) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      var resta;
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return _data_favoriteresta_idb__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].getResta(id);
+
+            case 2:
+              resta = _context3.sent;
+              return _context3.abrupt("return", !!resta);
+
+            case 4:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
+  _renderLike: function _renderLike() {
+    var _this3 = this;
+
+    this._likeButtonContainer.innerHTML = Object(_views_templates_resto__WEBPACK_IMPORTED_MODULE_1__[/* createLikeButtonTemplate */ "a"])();
+    var likeButton = document.querySelector('#likeButton');
+    likeButton.addEventListener('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
+              return _data_favoriteresta_idb__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].putResta(_this3._resta);
+
+            case 2:
+              _this3._renderButton();
+
+            case 3:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    })));
+  },
+  _renderLiked: function _renderLiked() {
+    var _this4 = this;
+
+    this._likeButtonContainer.innerHTML = Object(_views_templates_resto__WEBPACK_IMPORTED_MODULE_1__[/* createLikedButtonTemplate */ "b"])();
+    var likeButton = document.querySelector('#likeButton');
+    likeButton.addEventListener('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+      return regeneratorRuntime.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              _context5.next = 2;
+              return _data_favoriteresta_idb__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].deleteResta(_this4._resta.id);
+
+            case 2:
+              _this4._renderButton();
+
+            case 3:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    })));
+  }
+};
+/* harmony default export */ __webpack_exports__["a"] = (LikeButtonInitiator);
+
+/***/ }),
+
+/***/ 16:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var DrawerInitiator = {
+  init: function init(_ref) {
+    var _this = this;
+
+    var button = _ref.button,
+        drawer = _ref.drawer,
+        content = _ref.content;
+    button.addEventListener('click', function (event) {
+      _this._toggleDrawer(event, drawer);
+    });
+    content.addEventListener('click', function (event) {
+      _this._closeDrawer(event, drawer);
+    });
+  },
+  _toggleDrawer: function _toggleDrawer(event, drawer) {
+    event.stopPropagation();
+    drawer.classList.toggle('open');
+  },
+  _closeDrawer: function _closeDrawer(event, drawer) {
+    event.stopPropagation();
+    drawer.classList.remove('open');
+  }
+};
+/* harmony default export */ __webpack_exports__["a"] = (DrawerInitiator);
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var idb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _globals_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var DATABASE_NAME = _globals_config__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].DATABASE_NAME,
+    DATABASE_VERSION = _globals_config__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].DATABASE_VERSION,
+    OBJECT_STORE_NAME = _globals_config__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].OBJECT_STORE_NAME;
+var dbPromise = Object(idb__WEBPACK_IMPORTED_MODULE_0__[/* openDB */ "a"])(DATABASE_NAME, DATABASE_VERSION, {
+  upgrade: function upgrade(database) {
+    database.createObjectStore(OBJECT_STORE_NAME, {
+      keyPath: 'id'
+    });
+  }
+});
+var FavoriteRestaIdb = {
+  getResta: function getResta(id) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (id) {
+                _context.next = 2;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 2:
+              _context.next = 4;
+              return dbPromise;
+
+            case 4:
+              return _context.abrupt("return", _context.sent.get(OBJECT_STORE_NAME, id));
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  getAllRestas: function getAllRestas() {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return dbPromise;
+
+            case 2:
+              return _context2.abrupt("return", _context2.sent.getAll(OBJECT_STORE_NAME));
+
+            case 3:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
+  putResta: function putResta(resta) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              if (resta.hasOwnProperty('id')) {
+                _context3.next = 2;
+                break;
+              }
+
+              return _context3.abrupt("return");
+
+            case 2:
+              _context3.next = 4;
+              return dbPromise;
+
+            case 4:
+              return _context3.abrupt("return", _context3.sent.put(OBJECT_STORE_NAME, resta));
+
+            case 5:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }))();
+  },
+  deleteResta: function deleteResta(id) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
+              return dbPromise;
+
+            case 2:
+              return _context4.abrupt("return", _context4.sent["delete"](OBJECT_STORE_NAME, id));
+
+            case 3:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }))();
+  }
+};
+/* harmony default export */ __webpack_exports__["a"] = (FavoriteRestaIdb);
+
+/***/ }),
+
+/***/ 32:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
+var runtime = __webpack_require__(20);
+
+// EXTERNAL MODULE: ./src/styles/style.scss
+var style = __webpack_require__(21);
+
+// EXTERNAL MODULE: ./src/styles/skeleton.scss
+var skeleton = __webpack_require__(23);
+
+// EXTERNAL MODULE: ./src/styles/responsive.scss
+var responsive = __webpack_require__(25);
+
+// EXTERNAL MODULE: ./src/scripts/views/app.js
+var app = __webpack_require__(12);
+
+// EXTERNAL MODULE: ./node_modules/serviceworker-webpack-plugin/lib/runtime.js
+var lib_runtime = __webpack_require__(17);
+var lib_runtime_default = /*#__PURE__*/__webpack_require__.n(lib_runtime);
+
+// CONCATENATED MODULE: ./src/scripts/utils/sw-register.js
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var swRegister = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            if (!('serviceWorker' in navigator)) {
+              _context.next = 4;
+              break;
+            }
+
+            _context.next = 3;
+            return lib_runtime_default.a.register();
+
+          case 3:
+            return _context.abrupt("return");
+
+          case 4:
+            console.log('Service worker not supported in this browser');
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function swRegister() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/* harmony default export */ var sw_register = (swRegister);
+// EXTERNAL MODULE: ./node_modules/lazysizes/lazysizes.js
+var lazysizes = __webpack_require__(10);
+
+// EXTERNAL MODULE: ./node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js
+var ls_parent_fit = __webpack_require__(31);
+
+// CONCATENATED MODULE: ./src/scripts/index.js
+
+
+
+
+
+
+
+
+var scripts_app = new app["a" /* default */]({
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent')
+});
+window.addEventListener('hashchange', function () {
+  scripts_app.renderPage();
+});
+window.addEventListener('load', function () {
+  scripts_app.renderPage();
+  sw_register();
+});
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/sweetalert2/dist/sweetalert2.all.js
+var sweetalert2_all = __webpack_require__(1);
+var sweetalert2_all_default = /*#__PURE__*/__webpack_require__.n(sweetalert2_all);
+
+// EXTERNAL MODULE: ./src/scripts/globals/config.js
+var config = __webpack_require__(0);
+
+// CONCATENATED MODULE: ./src/scripts/globals/api-endpoint.js
+
+var API_ENDPOINT = {
+  GET_LIST: "".concat(config["a" /* default */].BASE_URL, "list"),
+  DETAIL: function DETAIL(id) {
+    return "".concat(config["a" /* default */].BASE_URL, "detail/").concat(id);
+  },
+  SEND_DATA: "".concat(config["a" /* default */].BASE_URL, "review")
+};
+/* harmony default export */ var api_endpoint = (API_ENDPOINT);
+// CONCATENATED MODULE: ./src/scripts/data/resto-source.js
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var resto_source_RestoSource = /*#__PURE__*/function () {
+  function RestoSource() {
+    _classCallCheck(this, RestoSource);
+  }
+
+  _createClass(RestoSource, null, [{
+    key: "normalList",
+    value: function () {
+      var _normalList = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var response, responseJson;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return fetch(api_endpoint.GET_LIST);
+
+              case 3:
+                response = _context.sent;
+                _context.next = 6;
+                return response.json();
+
+              case 6:
+                responseJson = _context.sent;
+
+                if (responseJson.error) {
+                  _context.next = 11;
+                  break;
+                }
+
+                return _context.abrupt("return", responseJson.restaurants);
+
+              case 11:
+                sweetalert2_all_default.a.fire({
+                  icon: 'error',
+                  title: 'Sorry...',
+                  text: 'Data not founds'
+                });
+
+              case 12:
+                _context.next = 17;
+                break;
+
+              case 14:
+                _context.prev = 14;
+                _context.t0 = _context["catch"](0);
+                sweetalert2_all_default.a.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: _context.t0
+                });
+
+              case 17:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 14]]);
+      }));
+
+      function normalList() {
+        return _normalList.apply(this, arguments);
+      }
+
+      return normalList;
+    }()
+  }, {
+    key: "detailResta",
+    value: function () {
+      var _detailResta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(id) {
+        var response, responseJson;
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return fetch(api_endpoint.DETAIL(id));
+
+              case 3:
+                response = _context2.sent;
+                _context2.next = 6;
+                return response.json();
+
+              case 6:
+                responseJson = _context2.sent;
+
+                if (responseJson.error) {
+                  _context2.next = 11;
+                  break;
+                }
+
+                return _context2.abrupt("return", responseJson.restaurant);
+
+              case 11:
+                sweetalert2_all_default.a.fire({
+                  icon: 'error',
+                  title: 'Sorry...',
+                  text: 'Data not founds'
+                });
+
+              case 12:
+                _context2.next = 17;
+                break;
+
+              case 14:
+                _context2.prev = 14;
+                _context2.t0 = _context2["catch"](0);
+                sweetalert2_all_default.a.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: _context2.t0
+                });
+
+              case 17:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 14]]);
+      }));
+
+      function detailResta(_x) {
+        return _detailResta.apply(this, arguments);
+      }
+
+      return detailResta;
+    }()
+  }, {
+    key: "sendReview",
+    value: function () {
+      var _sendReview = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(data) {
+        var response, responseJson;
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return fetch(api_endpoint.SEND_DATA, {
+                  method: 'POST',
+                  headers: {
+                    'X-Auth-Token': 12345,
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+                });
+
+              case 3:
+                response = _context3.sent;
+                _context3.next = 6;
+                return response.json();
+
+              case 6:
+                responseJson = _context3.sent;
+
+                if (responseJson.error) {
+                  _context3.next = 12;
+                  break;
+                }
+
+                sweetalert2_all_default.a.fire({
+                  icon: 'success',
+                  title: 'Success!',
+                  text: 'Your Reviews has been send!, Thank you'
+                });
+                return _context3.abrupt("return", responseJson);
+
+              case 12:
+                sweetalert2_all_default.a.fire({
+                  icon: 'error',
+                  title: 'Sorry...',
+                  text: 'Something wrong happened!'
+                });
+
+              case 13:
+                _context3.next = 18;
+                break;
+
+              case 15:
+                _context3.prev = 15;
+                _context3.t0 = _context3["catch"](0);
+                sweetalert2_all_default.a.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: _context3.t0
+                });
+
+              case 18:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 15]]);
+      }));
+
+      function sendReview(_x2) {
+        return _sendReview.apply(this, arguments);
+      }
+
+      return sendReview;
+    }()
+  }]);
+
+  return RestoSource;
+}();
+
+/* harmony default export */ var resto_source = __webpack_exports__["a"] = (resto_source_RestoSource);
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var UrlParser = {
+  parseActiveWithCombiner: function parseActiveWithCombiner() {
+    var url = window.location.hash.slice(1).toLocaleLowerCase();
+
+    var splitedUrl = this._urlSplitter(url);
+
+    return this._urlCombiner(splitedUrl);
+  },
+  parseAcvtiveUrlWithoutCombiner: function parseAcvtiveUrlWithoutCombiner() {
+    var url = window.location.hash.slice(1).toLowerCase();
+    return this._urlSplitter(url);
+  },
+  _urlSplitter: function _urlSplitter(url) {
+    var urlsSplit = url.split('/');
+    return {
+      resource: urlsSplit[1] || null,
+      id: urlsSplit[2] || null,
+      verb: urlsSplit[3] || null
+    };
+  },
+  _urlCombiner: function _urlCombiner(splitedUrl) {
+    return (splitedUrl.resource ? "/".concat(splitedUrl.resource) : '/') + (splitedUrl.id ? '/:id' : '') + (splitedUrl.verb ? "/".concat(splitedUrl.verb) : '');
+  }
+};
+/* harmony default export */ __webpack_exports__["a"] = (UrlParser);
+
+/***/ })
+
+/******/ });

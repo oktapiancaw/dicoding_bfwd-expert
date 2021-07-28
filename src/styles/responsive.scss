@@ -3,14 +3,6 @@ $primary-color: #64B63D;
 $dark-color: #215708;
 $soft-color: #ECFFE3;
 @media only screen and (min-width: 520px) {
-  main{
-    .jumbotron{
-      height: 70vh;
-      &_img{
-        height: 80% !important;
-      }
-    }
-  }
   .content__box{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
@@ -21,19 +13,6 @@ $soft-color: #ECFFE3;
   }
 }
 @media only screen and (min-width: 650px) {
-  main{
-    .jumbotron{
-      &_img{
-        left: 0 !important;
-        border-radius: 0 !important;
-        height: 100% !important;
-      }
-      h1{
-        text-align: center;
-        font-size: 24px !important;
-      }
-    }
-  }
   .app-bar{
     height: 80px;
 
